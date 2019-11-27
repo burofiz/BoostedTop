@@ -1,0 +1,10 @@
+#include_directories(${CMAKE_SOURCE_DIR}/lib ${CMAKE_SOURCE_DIR}/libextra ${PROJECT_BINARY_DIR}/lib)
+file(GLOB BoostedTopSRC *.cc) 
+file(GLOB BoostedTopHEADER *.h) 
+#set(BoostedTopSRC main.cc BoostedTop.cc)
+#set(BoostedTopHEADER BoostedTop.h)
+include_directories(include)
+add_executable(AnalysisBoostedTop ${BoostedTopSRC} ${BoostedTopHEADER})
+target_link_libraries(AnalysisBoostedTop ${URAnalysis_LIBRARIES} ${ROOT_LIBRARIES} -lMinuit)
+
+install(TARGETS AnalysisBoostedTop DESTINATION bin)
