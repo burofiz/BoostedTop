@@ -6,7 +6,7 @@
 bool BoostedTop::AnalysisNonIsoLep()
 {
 	BoostedTL();
-
+	std::cout<<"AL 9"<<endl;
 	for(LepTopJet* ltj : RecLepJets)
 	{
 		if(ltj->IsTop() &&  abs(ltj->LepPDGID()) == 13) {lepjetmu_right.Fill(ltj, weight);}
@@ -64,7 +64,7 @@ bool BoostedTop::AnalysisNonIsoLep()
 				break;
 			}
 		}
-
+		std::cout<<"AL 67"<<endl;
 		if(htj != nullptr)
 		{
 			//if(TRAIN) {htj->SetTree(tophaddata);}
@@ -113,11 +113,11 @@ bool BoostedTop::AnalysisNonIsoLep()
 			nvtx = NumGoodVertices();
 			btag = htj->BTag();
 			if(cfillsigtree_) {ttbartree->Fill();}
-			//std::cout<<"AL.cc, 11"<<endl;
+			std::cout<<"AL.cc, 116"<<endl;
 			_hists1d["counter"]->Fill(19.5, weight);
 			if(htj->IsSignalJet())
 			{
-				std::cout<<"AL.cc, 120"<<endl;
+				std::cout<<"AL.cc, 121"<<endl;
 				if(ttgen.IsComplete())
 				{
 					unfolding_all_.FillTruthReco(ttgen, ttrec, "BHBL", weight);
@@ -348,6 +348,7 @@ bool BoostedTop::AnalysisIsoLep()
 	}
 	else if(ttrec_res.IsComplete())
 	{
+		std::cout<<"AL 351"<<endl;
 		BAn->RunEvent(ttrec_res);//, ttgen);
 		_hists1d["counter"]->Fill(34.5, weight);
 		bool usebtag = false;

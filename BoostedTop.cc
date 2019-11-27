@@ -141,7 +141,7 @@ BoostedTop::BoostedTop(string outfilename) :
 		cbsidebandmin_ = btag_medium_;
 		cbsidebandmax_ = 100.;
 	}
-
+	std::cout<<"BT 144"<<endl;
 
 	cuncjer_ = CP->Get<double>("JEC_UncJER");
 	cuncjes_ = CP->Get<double>("JEC_UncJES");
@@ -220,6 +220,7 @@ BoostedTop::BoostedTop(string outfilename) :
 		bins_tty = {0.0, 0.2, 0.4, 0.6, 0.8, 1.0, 1.2, 1.4, 1.6, 1.8, 2.4};
 		bins_cts = {-1.0, -0.8, -0.6, -0.4, -0.2, 0.0, 0.2, 0.4, 0.6, 0.8, 1.0};
 	}
+	std::cout<<"BT 223"<<endl;
 
 	histfile = new TFile(outfilename.c_str(), "recreate");
 	histfile->cd();
